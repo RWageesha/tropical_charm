@@ -1,0 +1,16 @@
+{
+  "name": "tropical-charm-website",
+  "version": "1.0.0",
+  "description": "Tropical Charm - Sri Lankan Fashion Accessories Brand Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["tropical", "charm", "sri-lanka", "fashion", "accessories"],
+  "author": "Tropical Charm",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "gift-bloom-2026": {
+    "enabled": true,
+    "expireDate": "2026-04-10",
+    "title": "A Little Surprise For You 🌺",
+    "message": "Thank you for choosing Tropical Charm. Your support means the world to us!",
+    "discountCode": "BLOOM15",
+    "discountText": "Use code BLOOM15 for 15% off your next order",
+    "video": ""
+  },
+  "sun-charm-thankyou": {
+    "enabled": true,
+    "expireDate": "2026-05-01",
+    "title": "Thank You! ☀️",
+    "message": "We're so grateful you're part of the Tropical Charm family. Here's a special gift just for you.",
+    "discountCode": "SUNSHINE20",
+    "discountText": "Enjoy 20% off with code SUNSHINE20",
+    "video": ""
+  },
+  "ocean-blue-special": {
+    "enabled": true,
+    "expireDate": "2026-06-15",
+    "title": "Ocean Breeze Special 🌊",
+    "message": "Like the ocean waves, your support lifts us up. Thank you for being amazing!",
+    "discountCode": "OCEAN10",
+    "discountText": "Get 10% off your next purchase with OCEAN10",
+    "video": ""
+  }
+}

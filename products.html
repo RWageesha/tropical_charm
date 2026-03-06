@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse our complete collection of tropical fashion accessories - claw clips, hair accessories, and more.">
+  <title>Products - Tropical Charm</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body>
+  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="/images/logo.png" alt="Tropical Charm Logo" class="logo-img" onerror="this.style.display='none'">
+      </div>
+      
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/products.html" class="nav-link">Products</a></li>
+        <li><a href="/about.html" class="nav-link">About</a></li>
+        <li><a href="/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="hero" style="min-height: 50vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">Our Collections</h1>
+      <p class="hero-tagline">Discover Your Perfect Tropical Charm</p>
+      <p class="hero-description">
+        Each combo is thoughtfully curated to bring you the perfect blend of 
+        elegance, quality, and island-inspired beauty.
+      </p>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Complete Collection</h2>
+      <p class="section-subtitle">Premium claw clip combos for every style</p>
+    </div>
+    
+    <div class="product-grid" id="all-products-grid">
+      <!-- Products will be loaded dynamically -->
+    </div>
+  </section>
+
+  <!-- How to Order Section -->
+  <section class="section" style="background-color: var(--light-gold); padding: var(--spacing-lg); border-radius: 20px;">
+    <div class="text-center">
+      <h2 class="section-title">How to Order</h2>
+      <div style="max-width: 800px; margin: var(--spacing-md) auto;">
+        <p style="font-size: 1.2rem; margin-bottom: var(--spacing-md);">
+          📱 <strong>Step 1:</strong> Choose your favorite combo above<br>
+          💬 <strong>Step 2:</strong> Click "Order via WhatsApp" button<br>
+          ✉️ <strong>Step 3:</strong> Send us a message with your selection<br>
+          ✨ <strong>Step 4:</strong> We'll confirm availability and delivery details
+        </p>
+        <p style="font-size: 1rem; color: var(--sage-green); font-style: italic;">
+          We deliver island-wide! Payment on delivery available.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">TROPICAL CHARM</div>
+      <p class="footer-tagline">Forever Tropical Style – Your Charm, Our Passion</p>
+      
+      <div class="footer-social">
+        <a href="#" class="social-link" onclick="openSocialMedia('instagram')" title="Instagram">📷</a>
+        <a href="#" class="social-link" onclick="openSocialMedia('tiktok')" title="TikTok">🎵</a>
+        <a href="#" class="social-link" onclick="openSocialMedia('facebook')" title="Facebook">📘</a>
+        <a href="#" class="social-link" onclick="openSocialMedia('whatsapp')" title="WhatsApp">💬</a>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 Tropical Charm. All rights reserved. Made with 🌺 in Sri Lanka.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/main.js"></script>
+  <script>
+    // Load all products
+    document.addEventListener('DOMContentLoaded', async () => {
+      const products = await loadProducts();
+      renderProducts(products, 'all-products-grid');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Tropical Charm - Order via Instagram, WhatsApp, TikTok, or Facebook.">
+  <title>Contact Us - Tropical Charm</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body>
+  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="/images/logo.png" alt="Tropical Charm Logo" class="logo-img" onerror="this.style.display='none'">
+      </div>
+      
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/products.html" class="nav-link">Products</a></li>
+        <li><a href="/about.html" class="nav-link">About</a></li>
+        <li><a href="/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="hero" style="min-height: 50vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">Let's Connect</h1>
+      <p class="hero-tagline">We'd Love to Hear from You</p>
+      <p class="hero-description">
+        Have questions? Want to place an order? Reach out to us through your 
+        favorite social media platform or WhatsApp!
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Options -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Choose your preferred way to connect with us</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Instagram -->
+      <div class="contact-card">
+        <div class="contact-icon">📷</div>
+        <h3 class="contact-title">Instagram</h3>
+        <p>Follow us for daily inspiration, new arrivals, and behind-the-scenes content.</p>
+        <a href="#" onclick="openSocialMedia('instagram'); return false;" class="contact-link">
+          @tropicalcharm
+        </a>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="contact-card">
+        <div class="contact-icon">💬</div>
+        <h3 class="contact-title">WhatsApp</h3>
+        <p>The fastest way to place an order or ask questions. We reply quickly!</p>
+        <a href="#" onclick="openSocialMedia('whatsapp'); return false;" class="contact-link">
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- TikTok -->
+      <div class="contact-card">
+        <div class="contact-icon">🎵</div>
+        <h3 class="contact-title">TikTok</h3>
+        <p>Watch our styling tips, tutorials, and fun tropical content.</p>
+        <a href="#" onclick="openSocialMedia('tiktok'); return false;" class="contact-link">
+          @tropicalcharm
+        </a>
+      </div>
+
+      <!-- Facebook -->
+      <div class="contact-card">
+        <div class="contact-icon">📘</div>
+        <h3 class="contact-title">Facebook</h3>
+        <p>Join our community, see customer reviews, and stay updated.</p>
+        <a href="#" onclick="openSocialMedia('facebook'); return false;" class="contact-link">
+          Tropical Charm
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Order Information -->
+  <section class="section">
+    <div style="max-width: 900px; margin: 0 auto; background: var(--pure-white); padding: var(--spacing-lg); border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);">
+      <h2 class="section-title text-center">How to Order</h2>
+      
+      <div style="margin-top: var(--spacing-md);">
+        <div style="margin-bottom: var(--spacing-md);">
+          <h4 style="color: var(--tropical-green); margin-bottom: var(--spacing-xs);">📱 Step 1: Choose Your Combo</h4>
+          <p>Browse our <a href="/products.html" style="color: var(--soft-gold); text-decoration: underline;">Products page</a> and pick your favorite claw clip combo.</p>
+        </div>
+
+        <div style="margin-bottom: var(--spacing-md);">
+          <h4 style="color: var(--tropical-green); margin-bottom: var(--spacing-xs);">💬 Step 2: Send Us a Message</h4>
+          <p>Contact us via WhatsApp, Instagram DM, or Facebook Messenger with:</p>
+          <ul style="margin-left: var(--spacing-md); margin-top: var(--spacing-xs);">
+            <li>Product name (e.g., "Crystal Bloom Combo")</li>
+            <li>Quantity needed</li>
+            <li>Your delivery location</li>
+          </ul>
+        </div>
+
+        <div style="margin-bottom: var(--spacing-md);">
+          <h4 style="color: var(--tropical-green); margin-bottom: var(--spacing-xs);">✅ Step 3: Confirm Your Order</h4>
+          <p>We'll confirm availability, pricing, and delivery details with you.</p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--tropical-green); margin-bottom: var(--spacing-xs);">🚚 Step 4: Delivery</h4>
+          <p>We deliver island-wide! Payment on delivery is available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="background: var(--pure-white); padding: var(--spacing-md); border-radius: 15px; margin-bottom: var(--spacing-md); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);">
+        <h4 style="color: var(--tropical-green);">Do you ship outside Sri Lanka?</h4>
+        <p>Currently, we deliver only within Sri Lanka. International shipping coming soon!</p>
+      </div>
+
+      <div style="background: var(--pure-white); padding: var(--spacing-md); border-radius: 15px; margin-bottom: var(--spacing-md); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);">
+        <h4 style="color: var(--tropical-green);">What payment methods do you accept?</h4>
+        <p>Cash on delivery, bank transfer, or mobile payment apps. We'll discuss options when you place your order.</p>
+      </div>
+
+      <div style="background: var(--pure-white); padding: var(--spacing-md); border-radius: 15px; margin-bottom: var(--spacing-md); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);">
+        <h4 style="color: var(--tropical-green);">How long does delivery take?</h4>
+        <p>Delivery typically takes 2-5 business days depending on your location in Sri Lanka.</p>
+      </div>
+
+      <div style="background: var(--pure-white); padding: var(--spacing-md); border-radius: 15px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);">
+        <h4 style="color: var(--tropical-green);">Can I return or exchange products?</h4>
+        <p>Yes! We accept returns within 7 days if the product is unused and in original packaging.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Final CTA -->
+  <section class="section text-center">
+    <h2 class="section-title">Ready to Add Some Tropical Charm?</h2>
+    <p style="font-size: 1.2rem; max-width: 600px; margin: var(--spacing-md) auto;">
+      We're excited to help you find the perfect accessories. Reach out today!
+    </p>
+    <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-top: var(--spacing-md);">
+      <a href="#" onclick="openSocialMedia('whatsapp'); return false;" class="cta-button">
+        WhatsApp Us
+      </a>
+      <a href="#" onclick="openSocialMedia('instagram'); return false;" class="cta-button" style="background-color: var(--soft-gold); color: var(--tropical-green);">
+        DM on Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">TROPICAL CHARM</div>
+      <p class="footer-tagline">Forever Tropical Style – Your Charm, Our Passion</p>
+      
+      <div class="footer-social">
+        <a href="#" class="social-link" onclick="openSocialMedia('instagram')" title="Instagram">📷</a>
+        <a href="#" class="social-link" onclick="openSocialMedia('tiktok')" title="TikTok">🎵</a>
+        <a href="#" class="social-link" onclick="openSocialMedia('facebook')" title="Facebook">📘</a>
+        <a href="#" class="social-link" onclick="openSocialMedia('whatsapp')" title="WhatsApp">💬</a>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 Tropical Charm. All rights reserved. Made with 🌺 in Sri Lanka.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

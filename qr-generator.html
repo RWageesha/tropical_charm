@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator - Tropical Charm</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #faf8f3, #f4e4c1);
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      color: #1a4d2e;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+    
+    .subtitle {
+      color: #7a9b76;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    
+    label {
+      display: block;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #1a4d2e;
+      font-weight: bold;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e8e8e8;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border 0.3s;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: #d4af37;
+    }
+    
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: #1a4d2e;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+    }
+    
+    button:hover {
+      background: #d4af37;
+      color: #1a4d2e;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    }
+    
+    .result {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: #faf8f3;
+      border-radius: 15px;
+      text-align: center;
+      display: none;
+    }
+    
+    .result.show {
+      display: block;
+    }
+    
+    .qr-code {
+      margin: 2rem 0;
+    }
+    
+    .url-display {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      word-break: break-all;
+      margin: 1rem 0;
+      border-left: 4px solid #d4af37;
+    }
+    
+    .help-text {
+      background: #f4e4c1;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #1a4d2e;
+    }
+    
+    .instructions {
+      background: #e8f5e9;
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+    }
+    
+    .instructions h3 {
+      color: #1a4d2e;
+      margin-bottom: 1rem;
+    }
+    
+    .instructions ol {
+      margin-left: 1.5rem;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌺 QR Code Generator</h1>
+    <p class="subtitle">Create QR codes for your surprise pages</p>
+    
+    <form id="qr-form">
+      <label for="domain">Your Website Domain:</label>
+      <input 
+        type="text" 
+        id="domain" 
+        placeholder="e.g., tropicalcharm.lk or yourdomain.com"
+        required
+      >
+      
+      <label for="surprise-id">Surprise Page ID:</label>
+      <input 
+        type="text" 
+        id="surprise-id" 
+        placeholder="e.g., gift-bloom-2026"
+        required
+      >
+      <div class="help-text">
+        📌 This should match the ID in your surprises.json file
+      </div>
+      
+      <label for="qr-size">QR Code Size:</label>
+      <select id="qr-size">
+        <option value="200">Small (200x200)</option>
+        <option value="300" selected>Medium (300x300)</option>
+        <option value="500">Large (500x500)</option>
+        <option value="1000">Extra Large (1000x1000)</option>
+      </select>
+      
+      <button type="submit">Generate QR Code</button>
+    </form>
+    
+    <div id="result" class="result">
+      <h3>Your QR Code is Ready! 🎉</h3>
+      
+      <div class="url-display">
+        <strong>URL:</strong> <span id="generated-url"></span>
+      </div>
+      
+      <div class="qr-code">
+        <img id="qr-image" src="" alt="QR Code">
+      </div>
+      
+      <button onclick="downloadQR()">Download QR Code</button>
+      
+      <div class="help-text" style="margin-top: 1rem;">
+        💡 Right-click the QR code and "Save Image As..." to download
+      </div>
+    </div>
+    
+    <div class="instructions">
+      <h3>📖 How to Use</h3>
+      <ol>
+        <li>Enter your website domain (without http:// or https://)</li>
+        <li>Enter the surprise page ID from your surprises.json file</li>
+        <li>Choose your preferred QR code size</li>
+        <li>Click "Generate QR Code"</li>
+        <li>Download and add to your gift cards or thank you notes</li>
+      </ol>
+      
+      <div class="help-text" style="margin-top: 1rem;">
+        <strong>Tips:</strong><br>
+        • Use 300x300 for digital use<br>
+        • Use 500x500 or larger for print<br>
+        • Test the QR code before printing in bulk<br>
+        • Make sure the surprise page is enabled in surprises.json
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const form = document.getElementById('qr-form');
+    const resultDiv = document.getElementById('result');
+    const qrImage = document.getElementById('qr-image');
+    const generatedUrl = document.getElementById('generated-url');
+    
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const domain = document.getElementById('domain').value.trim();
+      const surpriseId = document.getElementById('surprise-id').value.trim();
+      const size = document.getElementById('qr-size').value;
+      
+      // Clean domain (remove http/https if present)
+      const cleanDomain = domain.replace(/^https?:\/\//, '');
+      
+      // Generate full URL
+      const fullUrl = `https://${cleanDomain}/surprise/${surpriseId}`;
+      
+      // Generate QR code using API
+      const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(fullUrl)}`;
+      
+      // Display result
+      qrImage.src = qrApiUrl;
+      generatedUrl.textContent = fullUrl;
+      resultDiv.classList.add('show');
+      
+      // Scroll to result
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    
+    function downloadQR() {
+      const link = document.createElement('a');
+      link.href = qrImage.src;
+      link.download = 'tropical-charm-qr-code.png';
+      link.click();
+    }
+  </script>
+</body>
+</html>
