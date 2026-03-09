@@ -35,6 +35,14 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <!-- Video Background -->
+    <video class="hero-video-bg" autoplay muted loop playsinline id="heroVideo">
+      <source src="./images/TC.mp4" type="video/mp4">
+    </video>
+    
+    <!-- White Overlay -->
+    <div class="hero-video-overlay"></div>
+    
     <!-- Tropical Island Animations -->
     <div class="palm-leaf left">🌴</div>
     <div class="palm-leaf right">🌴</div>
@@ -159,6 +167,12 @@
     document.addEventListener('DOMContentLoaded', async () => {
       const products = await loadProducts(3);
       renderProducts(products, 'featured-products-grid');
+      
+      // Slow down the hero video
+      const heroVideo = document.getElementById('heroVideo');
+      if (heroVideo) {
+        heroVideo.playbackRate = 0.5; // 50% speed (slower)
+      }
     });
   </script>
 </body>
