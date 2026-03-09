@@ -25,5 +25,14 @@
     "discountCode": "OCEAN10",
     "discountText": "Get 10% off your next purchase with OCEAN10",
     "video": ""
+  },
+  "customer1-anniversary": {
+    "enabled": true,
+    "expireDate": "2027-03-08",
+    "title": "Happy Anniversary, My Love 💕",
+    "message": "Happy anniversary, my dear. I know this journey hasn't always been easy, and there were times when the long hours at your job made me feel lonely or sidelined. It was hard to be without your attention, but even in those quiet moments, my heart never left your side.\n\nI want you to know that I am right here with you, now and always. I've seen how hard you work, and I am committed to supporting you and caring for you through every challenge ahead. You are my most precious person, and I'm so grateful we stuck together through the fights and the tough days.\n\nI got this gift for you because I wanted to give you something as beautiful as you are; I hope it adds just a little extra beauty to your day, though you are already perfect to me. I don't just want to be with you for today, I want to be with you for the rest of my life. Thank you for being mine. Happy anniversary!",
+    "discountCode": "",
+    "discountText": "",
+    "video": ""
   }
 }

@@ -1,0 +1,85 @@
+========================================
+CUSTOMER 1 - ANNIVERSARY SURPRISE PAGE
+========================================
+
+📅 Created: March 8, 2026
+💕 Purpose: Personal anniversary message with gift
+
+========================================
+HOW TO ACCESS THE PAGE
+========================================
+
+DIRECT URL:
+http://localhost:3000/surprise/customer1-anniversary
+
+(When deployed online, replace localhost:3000 with your actual domain)
+
+========================================
+QR CODE INSTRUCTIONS
+========================================
+
+1. Open qr-generator.html in your browser
+2. Enter your domain (or localhost:3000 for testing)
+3. Enter surprise ID: customer1-anniversary
+4. Generate and download QR code
+5. Print QR code on the gift card
+
+========================================
+PAGE SETTINGS
+========================================
+
+Surprise ID: customer1-anniversary
+Title: "Happy Anniversary, My Love 💕"
+Expiration Date: March 8, 2027 (1 year from now)
+Status: Enabled
+
+========================================
+TO VIEW THE PAGE NOW
+========================================
+
+If server is running:
+1. Make sure npm start is running in the terminal
+2. Open browser to: http://localhost:3000/surprise/customer1-anniversary
+3. You'll see the romantic anniversary message with confetti!
+
+If server is NOT running:
+1. Open terminal in the project folder
+2. Run: npm start
+3. Then open: http://localhost:3000/surprise/customer1-anniversary
+
+========================================
+TO EDIT THE MESSAGE
+========================================
+
+1. Open: data/surprises.json
+2. Find: "customer1-anniversary"
+3. Edit the "message" field
+4. Save the file
+5. Refresh the browser to see changes
+
+========================================
+TO DISABLE THE PAGE LATER
+========================================
+
+In data/surprises.json, change:
+"enabled": true
+to:
+"enabled": false
+
+========================================
+GIFT CARD SUGGESTION
+========================================
+
+Include this with the Tropical Charm gift:
+
+---
+"A special message just for you 💕
+Scan the QR code to reveal your surprise"
+
+[QR CODE HERE]
+
+With all my love,
+[Your name]
+---
+
+========================================

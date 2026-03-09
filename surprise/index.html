@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#ffb6c1">
   <title>Special Surprise - Tropical Charm</title>
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Optimize text rendering for mobile */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    
     .surprise-video {
       max-width: 100%;
       border-radius: 15px;
@@ -21,9 +30,419 @@
       background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.2));
       border-radius: 20px;
     }
+    
+    /* Enhanced Romantic Styling */
+    .anniversary-page .surprise-box {
+      background: linear-gradient(135deg, #fff 0%, #fef5f5 100%);
+      border: 2px solid rgba(255, 182, 193, 0.3);
+      box-shadow: 0 30px 100px rgba(255, 105, 180, 0.2), 0 0 60px rgba(255, 182, 193, 0.1);
+      max-width: 850px;
+    }
+    
+    .anniversary-page .surprise-icon {
+      font-size: 6rem;
+      animation: heartBeat 1.5s ease-in-out infinite;
+    }
+    
+    .anniversary-page .surprise-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, #d4af37, #ff69b4, #d4af37);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 30px rgba(255, 182, 193, 0.3);
+    }
+    
+    .anniversary-page .surprise-message {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      line-height: 2;
+      color: #000000;
+      text-align: left;
+      padding: 0 2rem;
+      white-space: pre-line;
+      margin: 2rem 0;
+      border-left: 4px solid #ffb6c1;
+      padding-left: 2rem;
+    }
+    
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      10%, 30% { transform: scale(1.1); }
+      20%, 40% { transform: scale(1); }
+    }
+    
+    .floating-heart {
+      position: fixed;
+      font-size: 2rem;
+      opacity: 0;
+      animation: floatHeart 8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(100vh) scale(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-100px) scale(1.5) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    .rose-petal {
+      position: fixed;
+      font-size: 1.5rem;
+      opacity: 0;
+      animation: fallPetal 10s linear infinite;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    
+    @keyframes fallPetal {
+      0% {
+        transform: translateY(-10vh) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(110vh) translateX(100px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+    
+    .love-sparkle {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: linear-gradient(45deg, #ff69b4, #ffd700);
+      border-radius: 50%;
+      opacity: 0;
+      animation: sparkle 3s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 9999;
+      box-shadow: 0 0 10px #ff69b4;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+    
+    /* ============================================
+       VISIBLE ANIMATIONS (Behind and Around Content)
+       ============================================ */
+    
+    /* Floating Hearts - Visible on Both Backgrounds */
+    .float-heart {
+      position: fixed;
+      font-size: 2rem;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0;
+    }
+    
+    @keyframes heartFloat {
+      0% {
+        transform: translateY(110vh) rotate(0deg) scale(0.5);
+        opacity: 0;
+      }
+      5% {
+        opacity: 0.95;
+      }
+      50% {
+        opacity: 1;
+      }
+      95% {
+        opacity: 0.85;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(180deg) scale(1);
+        opacity: 0;
+      }
+    }
+    
+    /* Floating Flowers - Visible Across Page */
+    .float-flower {
+      position: fixed;
+      font-size: 2.5rem;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0;
+    }
+    
+    @keyframes flowerFloat {
+      0% {
+        transform: translateY(110vh) rotate(0deg) translateX(0);
+        opacity: 0;
+      }
+      5% {
+        opacity: 0.95;
+      }
+      50% {
+        transform: translateY(50vh) rotate(180deg) translateX(50px);
+        opacity: 1;
+      }
+      95% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(360deg) translateX(-30px);
+        opacity: 0;
+      }
+    }
+    
+    /* Sparkle Stars */
+    .sparkle-star {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(45deg, #ffd700, #ff69b4);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0;
+      box-shadow: 0 0 10px #ffd700;
+    }
+    
+    @keyframes starTwinkle {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+      }
+      50% {
+        opacity: 0.95;
+        transform: scale(1.5) rotate(180deg);
+      }
+    }
+    
+    /* Gentle Particles */
+    .gentle-particle {
+      position: fixed;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0;
+    }
+    
+    @keyframes particleDrift {
+      0% {
+        transform: translate(0, 0) scale(0.8);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.85;
+      }
+      80% {
+        opacity: 0.75;
+      }
+      100% {
+        transform: translate(var(--drift-x), var(--drift-y)) scale(1.2);
+        opacity: 0;
+      }
+    }
+    
+    /* Subtle Brand Watermark */
+    .brand-watermark {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.1rem;
+      color: rgba(212, 175, 55, 0.3);
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 10;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+      letter-spacing: 1px;
+    }
+    
+    /* ============================================
+       MOBILE OPTIMIZATION (Priority)
+       ============================================ */
+    
+    /* Mobile phones (most important) */
+    @media (max-width: 600px) {
+      .anniversary-page .surprise-box {
+        padding: 1.5rem 1rem;
+        margin: 0.5rem;
+        border-radius: 20px;
+        max-width: 100%;
+      }
+      
+      .anniversary-page .surprise-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+      
+      .anniversary-page .surprise-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+      }
+      
+      .anniversary-page .surprise-message {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        padding: 0 1rem;
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        border-left: 3px solid #ffb6c1;
+        text-align: left;
+      }
+      
+      .surprise-home-link {
+        font-size: 0.95rem;
+        padding: 0.9rem 2rem;
+        margin-top: 1.5rem;
+      }
+      
+      /* Optimize animations for mobile */
+      .floating-heart {
+        font-size: 1.5rem;
+      }
+      
+      .rose-petal {
+        font-size: 1.2rem;
+      }
+      
+      .love-sparkle {
+        width: 4px;
+        height: 4px;
+      }
+      
+      /* Reduce floating flowers on mobile */
+      .floating-flower {
+        font-size: 1.8rem;
+      }
+      
+      /* Scale down animations for mobile */
+      .float-heart {
+        font-size: 1.5rem;
+      }
+      
+      .float-flower {
+        font-size: 1.8rem;
+      }
+      
+      .sparkle-star {
+        width: 5px;
+        height: 5px;
+      }
+      
+      .gentle-particle {
+        width: 8px;
+        height: 8px;
+      }
+      
+      /* Smaller brand watermark on mobile */
+      .brand-watermark {
+        font-size: 0.85rem;
+        top: 10px;
+        right: 10px;
+      }
+      
+      /* Better spacing */
+      .surprise-container {
+        padding: 0.5rem;
+        align-items: flex-start;
+        padding-top: 2rem;
+      }
+    }
+    
+    /* Small phones */
+    @media (max-width: 400px) {
+      .anniversary-page .surprise-box {
+        padding: 1.2rem 0.8rem;
+      }
+      
+      .anniversary-page .surprise-icon {
+        font-size: 3.5rem;
+      }
+      
+      .anniversary-page .surprise-title {
+        font-size: 1.9rem;
+        padding: 0 0.3rem;
+      }
+      
+      .anniversary-page .surprise-message {
+        font-size: 0.98rem;
+        line-height: 1.7;
+        padding: 0 0.8rem;
+        padding-left: 0.8rem;
+      }
+    }
+    
+    /* Tablets */
+    @media (min-width: 601px) and (max-width: 968px) {
+      .anniversary-page .surprise-box {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+      }
+      
+      .anniversary-page .surprise-title {
+        font-size: 3rem;
+      }
+      
+      .anniversary-page .surprise-message {
+        font-size: 1.15rem;
+        padding: 0 1.5rem;
+        padding-left: 1.5rem;
+      }
+    }
+    
+    /* Landscape mobile */
+    @media (max-height: 600px) and (orientation: landscape) {
+      .surprise-container {
+        align-items: flex-start;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      
+      .anniversary-page .surprise-box {
+        padding: 1rem;
+      }
+      
+      .anniversary-page .surprise-icon {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .anniversary-page .surprise-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .anniversary-page .surprise-message {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 1rem 0;
+      }
+    }
   </style>
 </head>
 <body>
+  
+  <!-- Subtle Brand Watermark -->
+  <div class="brand-watermark">Tropical Charm</div>
   
   <!-- Surprise Container -->
   <div class="surprise-container">
