@@ -52,7 +52,9 @@
     </div>
     
     <div class="product-grid" id="all-products-grid">
-      <!-- Products will be loaded dynamically -->
+      <div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: #888;">
+        <p>🌺 Loading products...</p>
+      </div>
     </div>
   </section>
 
@@ -97,10 +99,23 @@
   <script src="./js/main.js"></script>
   <script>
     // Load all products
-    document.addEventListener('DOMContentLoaded', async () => {
-      const products = await loadProducts();
-      renderProducts(products, 'all-products-grid');
-    });
+    async function initProductsPage() {
+      try {
+        console.log('Initializing products page...');
+        const products = await loadProducts();
+        console.log('Products received:', products);
+        renderProducts(products, 'all-products-grid');
+      } catch (error) {
+        console.error('Error initializing products page:', error);
+      }
+    }
+    
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initProductsPage);
+    } else {
+      initProductsPage();
+    }
   </script>
 </body>
 </html>

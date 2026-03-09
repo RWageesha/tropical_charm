@@ -94,7 +94,9 @@
     </div>
     
     <div class="product-grid" id="featured-products-grid">
-      <!-- Products will be loaded dynamically via JavaScript -->
+      <div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: #888;">
+        <p>🌺 Loading products...</p>
+      </div>
     </div>
     
     <div class="text-center mt-3">
@@ -164,16 +166,29 @@
   <script src="./js/main.js"></script>
   <script>
     // Load featured products on homepage
-    document.addEventListener('DOMContentLoaded', async () => {
-      const products = await loadProducts(3);
-      renderProducts(products, 'featured-products-grid');
-      
-      // Slow down the hero video
-      const heroVideo = document.getElementById('heroVideo');
-      if (heroVideo) {
-        heroVideo.playbackRate = 0.5; // 50% speed (slower)
+    async function initHomePage() {
+      try {
+        console.log('Initializing homepage...');
+        const products = await loadProducts(3);
+        console.log('Products received:', products);
+        renderProducts(products, 'featured-products-grid');
+        
+        // Slow down the hero video
+        const heroVideo = document.getElementById('heroVideo');
+        if (heroVideo) {
+          heroVideo.playbackRate = 0.5; // 50% speed (slower)
+        }
+      } catch (error) {
+        console.error('Error initializing homepage:', error);
       }
-    });
+    }
+    
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHomePage);
+    } else {
+      initHomePage();
+    }
   </script>
 </body>
 </html>

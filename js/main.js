@@ -58,8 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // Load products dynamically
 async function loadProducts(limit = null) {
   try {
-    const response = await fetch('./data/products.json');
+    console.log('Loading products from data/products.json');
+    const response = await fetch('data/products.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const products = await response.json();
+    console.log('Products loaded:', products.length);
     const productsToShow = limit ? products.slice(0, limit) : products;
     return productsToShow;
   } catch (error) {
@@ -71,12 +76,22 @@ async function loadProducts(limit = null) {
 // Render products
 function renderProducts(products, containerId) {
   const container = document.getElementById(containerId);
-  if (!container) return;
+  if (!container) {
+    console.error('Container not found:', containerId);
+    return;
+  }
+  
+  if (!products || products.length === 0) {
+    container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #888;"><p style="font-size: 1.2rem;">🌺 Products coming soon! Check back later.</p></div>';
+    return;
+  }
+  
+  console.log('Rendering', products.length, 'products to', containerId);
   
   container.innerHTML = products.map(product => `
     <div class="product-card">
       <div class="product-image">
-        <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:#f5f5f5;color:#888;\'>🌺 ${product.name}</div>'">
+        <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'display:flex;align-items:center;justify-content:center;height:100%;background:#f5f5f5;color:#888;\\'>\uD83C\uDF3A ${product.name}</div>'">
       </div>
       <div class="product-info">
         <h3 class="product-name">${product.name}</h3>

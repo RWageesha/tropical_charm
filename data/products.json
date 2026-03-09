@@ -3,42 +3,42 @@
     "id": "crystal-bloom",
     "name": "Crystal Bloom Combo",
     "price": "Rs.1,000",
-    "image": "./images/products/crystal-bloom.jpg",
+    "image": "images/products/crystal-bloom.jpg",
     "description": "Elegant crystal-adorned claw clips with floral charm"
   },
   {
     "id": "ocean-blue",
     "name": "Ocean Blue Combo",
     "price": "Rs.1,000",
-    "image": "./images/products/ocean-blue.jpg",
+    "image": "images/products/ocean-blue.jpg",
     "description": "Serene ocean-inspired blue accessories"
   },
   {
     "id": "tropical-forest",
     "name": "Tropical Forest Combo",
     "price": "Rs.1,000",
-    "image": "./images/products/tropical-forest.jpg",
+    "image": "images/products/tropical-forest.jpg",
     "description": "Deep green tropical elegance"
   },
   {
     "id": "sandstone",
     "name": "Sandstone Combo",
     "price": "Rs.1,000",
-    "image": "./images/products/sandstone.jpg",
+    "image": "images/products/sandstone.jpg",
     "description": "Warm earthy tones for natural beauty"
   },
   {
     "id": "rose-blossom",
     "name": "Rose Blossom Combo",
     "price": "Rs.1,000",
-    "image": "./images/products/rose-blossom.jpg",
+    "image": "images/products/rose-blossom.jpg",
     "description": "Romantic rose-tinted accessories"
   },
   {
     "id": "sun-charm",
     "name": "Sun Charm Combo",
     "price": "Rs.1,000",
-    "image": "./images/products/sun-charm.jpg",
+    "image": "images/products/sun-charm.jpg",
     "description": "Golden sunshine-inspired pieces"
   }
 ]
