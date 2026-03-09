@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Load products dynamically
 async function loadProducts(limit = null) {
   try {
-    const response = await fetch('/data/products.json');
+    const response = await fetch('./data/products.json');
     const products = await response.json();
     const productsToShow = limit ? products.slice(0, limit) : products;
     return productsToShow;
@@ -76,7 +76,7 @@ function renderProducts(products, containerId) {
   container.innerHTML = products.map(product => `
     <div class="product-card">
       <div class="product-image">
-        Image: ${product.name}
+        <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;background:#f5f5f5;color:#888;\'>🌺 ${product.name}</div>'">
       </div>
       <div class="product-info">
         <h3 class="product-name">${product.name}</h3>
