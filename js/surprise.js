@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const surpriseId = urlParams.get('id');
   
+  console.log('Surprise ID:', surpriseId);
+  console.log('Current URL:', window.location.href);
+  
   if (!surpriseId) {
     showExpiredMessage('Invalid surprise link. Please check your URL.');
     return;
@@ -14,12 +17,24 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   try {
     // For GitHub Pages static hosting, load from JSON file
-    const response = await fetch('../data/surprises.json');
-    const allSurprises = await response.json();
-    const data = allSurprises[surpriseId];
+    // Use absolute path from domain root
+    const dataPath = '/data/surprises.json';
     
-    if (!data || data.expired || !data.enabled) {
-      showExpiredMessage(data?.message || 'This surprise link has expired or is no longer available.');
+    console.log('Attempting to fetch:', dataPath);
+    const response = await fetch(dataPath);
+    console.log('Fetch response status:', response.status);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const allSurprises = await response.json();
+    console.log('Loaded surprises:', Object.keys(allSurprises));
+    const data = allSurprises[surpriseId];
+    console.log('Found data for', surpriseId, ':', data ? 'Yes' : 'No');
+    
+    if (!data || !data.enabled) {
+      showExpiredMessage('This surprise link has expired or is no longer available.');
     } else {
       // Check if expired by date
       if (data.expireDate) {
@@ -90,7 +105,7 @@ function showExpiredMessage(message) {
     <div class="surprise-expired">
       <div class="surprise-expired-icon">🌺</div>
       <p class="surprise-expired-message">${message}</p>
-      <a href="/" class="surprise-home-link">Return to Home</a>
+      <a href="../index.html" class="surprise-home-link">Return to Home</a>
     </div>
   `;
 }
