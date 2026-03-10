@@ -105,7 +105,7 @@ function showExpiredMessage(message) {
     <div class="surprise-expired">
       <div class="surprise-expired-icon">🌺</div>
       <p class="surprise-expired-message">${message}</p>
-      <a href="../index.html" class="surprise-home-link">Return to Home</a>
+      <a href="/index.html" class="surprise-home-link">Return to Home</a>
     </div>
   `;
 }
