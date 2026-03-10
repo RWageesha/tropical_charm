@@ -3,23 +3,33 @@
 // =======================================
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // Get surprise ID from URL
-  const pathParts = window.location.pathname.split('/');
-  const surpriseId = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
+  // Get surprise ID from URL query parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const surpriseId = urlParams.get('id');
   
-  if (!surpriseId || surpriseId === 'index.html') {
-    showExpiredMessage('Invalid surprise link');
+  if (!surpriseId) {
+    showExpiredMessage('Invalid surprise link. Please check your URL.');
     return;
   }
   
   try {
-    // Fetch surprise data from API
-    const response = await fetch(`/api/surprise/${surpriseId}`);
-    const data = await response.json();
+    // For GitHub Pages static hosting, load from JSON file
+    const response = await fetch('../data/surprises.json');
+    const allSurprises = await response.json();
+    const data = allSurprises[surpriseId];
     
-    if (data.expired) {
-      showExpiredMessage(data.message);
+    if (!data || data.expired || !data.enabled) {
+      showExpiredMessage(data?.message || 'This surprise link has expired or is no longer available.');
     } else {
+      // Check if expired by date
+      if (data.expireDate) {
+        const expireDate = new Date(data.expireDate);
+        const today = new Date();
+        if (today > expireDate) {
+          showExpiredMessage('This surprise has expired.');
+          return;
+        }
+      }
       showSurprise(data);
     }
   } catch (error) {
